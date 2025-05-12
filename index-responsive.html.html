@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadestylacja: Interfejs Systemu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Metadestylacja <span class="version">v1.0</span></h1>
+            <div class="header-buttons">
+                <button id="save-btn" title="Zapisz konfigurację"><i class="fas fa-save"></i></button>
+                <button id="load-btn" title="Wczytaj konfigurację"><i class="fas fa-folder-open"></i></button>
+                <button id="help-btn" title="Pomoc"><i class="fas fa-question-circle"></i></button>
+                <button id="menu-toggle" class="mobile-only" title="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header mobile-only">
+                    <h2>Menu</h2>
+                    <button id="close-sidebar" title="Zamknij menu"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="module-navigator">
+                    <h2>Nawigator Modułów</h2>
+                    <div class="module-categories">
+                        <div class="module-category">
+                            <h3 class="category-title">I. Moduły Fundamentalne</h3>
+                            <div class="module-buttons">
+                                <button class="module-btn" data-module="I.1">I.1 Fundament Epistemologiczny</button>
+                                <button class="module-btn" data-module="I.2">I.2 Ontologia Parametrów</button>
+                                <button class="module-btn" data-module="I.3">I.3 Architektura Procesu</button>
+                            </div>
+                        </div>
+                        <div class="module-category">
+                            <h3 class="category-title">II. Moduły Operacyjne</h3>
+                            <div class="module-buttons">
+                                <button class="module-btn" data-module="II.1">II.1 Destylacja Pierwszego Rzędu</button>
+                                <button class="module-btn" data-module="II.2">II.2 Metadestylacja</button>
+                                <button class="module-btn" data-module="II.3">II.3 Wypalarka Metadestylacyjna</button>
+                                <button class="module-btn" data-module="II.4">II.4 Aplikacja Praktyczna</button>
+                            </div>
+                        </div>
+                        <div class="module-category">
+                            <h3 class="category-title">VI. Moduł Meta-Epistemologiczny</h3>
+                            <div class="module-buttons">
+                                <button class="module-btn" data-module="VI.1">VI.1 Destylacja Wielowymiarowa</button>
+                                <button class="module-btn" data-module="VI.2">VI.2 Meta-Ramowanie</button>
+                                <button class="module-btn" data-module="VI.3">VI.3 Integracja Transkonceptualna</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sequence-builder">
+                    <h2>Sekwencja Procesu</h2>
+                    <div class="sequence-container" id="sequence-container">
+                        <!-- Elementy sekwencji będą dodawane tutaj dynamicznie -->
+                    </div>
+                    <div class="sequence-controls">
+                        <button id="clear-sequence-btn">Wyczyść</button>
+                        <button id="visualize-btn">Wizualizuj</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-area">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="configuration">Konfiguracja</button>
+                    <button class="tab-btn" data-tab="preview">Podgląd</button>
+                    <button class="tab-btn" data-tab="visualization">Wizualizacja</button>
+                </div>
+                
+                <div class="tab-content active" id="configuration-tab">
+                    <div class="config-panel">
+                        <h2>Konfiguracja Procesu</h2>
+                        
+                        <div class="config-section">
+                            <h3>Informacje o Projekcie</h3>
+                            <div class="form-group">
+                                <label for="project-name">Nazwa Projektu:</label>
+                                <input type="text" id="project-name" placeholder="Wprowadź nazwę projektu destylacyjnego">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject-description">Opis Przedmiotu Destylacji:</label>
+                                <textarea id="subject-description" placeholder="Opisz zjawisko, problem lub koncepcję, którą chcesz analizować"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="config-section">
+                            <h3>Parametry Destylacyjne</h3>
+                            <div class="parameter-selector">
+                                <div class="parameter-category">
+                                    <h4>Parametry Konceptualne</h4>
+                                    <div class="parameter-options">
+                                        <label><input type="checkbox" class="param-checkbox" data-param="pragmatic"> Pragmatyczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="epistemic"> Epistemiczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="ontological"> Ontologiczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="axiological"> Aksjologiczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="relational"> Relacyjny</label>
+                                    </div>
+                                </div>
+                                <div class="parameter-category">
+                                    <h4>Parametry Ucieleśnione</h4>
+                                    <div class="parameter-options">
+                                        <label><input type="checkbox" class="param-checkbox" data-param="somatic-resonance"> Rezonans Somatyczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="kinesthetic"> Inteligencja Kinestetyczna</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="sensory"> Dostrojenie Sensoryczne</label>
+                                    </div>
+                                </div>
+                                <div class="parameter-category">
+                                    <h4>Parametry Kontemplacyjne</h4>
+                                    <div class="parameter-options">
+                                        <label><input type="checkbox" class="param-checkbox" data-param="meditative"> Świadomość Meditatywna</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="non-conceptual"> Świadomość Nie-konceptualna</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="presence"> Obecność</label>
+                                    </div>
+                                </div>
+                                <div class="parameter-category">
+                                    <h4>Parametry Intersubiektywne</h4>
+                                    <div class="parameter-options">
+                                        <label><input type="checkbox" class="param-checkbox" data-param="dialogical"> Rezonans Dialogiczny</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="collective"> Inteligencja Kolektywna</label>
+                                        <label><input type="checkbox" class="param-checkbox" data-param="field"> Pole Współświadomości</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-section">
+                            <h3>Wybór Szablonu</h3>
+                            <div class="form-group">
+                                <label for="template-selector">Szablon Destylacyjny:</label>
+                                <select id="template-selector">
+                                    <option value="problem">Destylacja Problemowa</option>
+                                    <option value="concept">Destylacja Koncepcyjna</option>
+                                    <option value="multi">Destylacja Wielowymiarowa</option>
+                                    <option value="meta">Metadestylacja</option>
+                                    <option value="custom">Własny Szablon</option>
+                                </select>
+                            </div>
+                            <div id="custom-template-container" class="hidden">
+                                <textarea id="custom-template" rows="8" placeholder="Wprowadź własną strukturę szablonu..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button id="generate-btn" class="primary-btn">Generuj Prompt</button>
+                            <button id="reset-btn">Resetuj Formularz</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="preview-tab">
+                    <div class="preview-controls">
+                        <button id="copy-prompt-btn"><i class="fas fa-copy"></i> <span class="btn-text">Kopiuj</span></button>
+                        <button id="download-prompt-btn"><i class="fas fa-download"></i> <span class="btn-text">Pobierz</span></button>
+                        <select id="format-selector">
+                            <option value="full">Pełny</option>
+                            <option value="compact">Kompaktowy</option>
+                            <option value="modular">Modułowy</option>
+                        </select>
+                    </div>
+                    <div class="prompt-preview">
+                        <pre id="prompt-content">Tutaj pojawi się wygenerowany prompt...</pre>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="visualization-tab">
+                    <div class="visualization-container">
+                        <div class="visualization-controls">
+                            <button id="zoom-in-btn"><i class="fas fa-search-plus"></i></button>
+                            <button id="zoom-out-btn"><i class="fas fa-search-minus"></i></button>
+                            <button id="reset-view-btn"><i class="fas fa-sync"></i></button>
+                        </div>
+                        <div id="visualization-canvas">
+                            <!-- Wizualizacja SVG będzie renderowana tutaj -->
+                            <svg id="flow-diagram" width="100%" height="600">
+                                <g id="diagram-group" transform="translate(40, 40)">
+                                    <!-- Elementy wizualizacji będą dodawane tutaj dynamicznie -->
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal-container" class="hidden">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="modal-title">Tytuł</h2>
+                    <button id="close-modal-btn">&times;</button>
+                </div>
+                <div class="modal-content" id="modal-content">
+                    <!-- Zawartość modalu będzie dodawana tutaj dynamicznie -->
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-cancel-btn">Anuluj</button>
+                    <button id="modal-confirm-btn">Potwierdź</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
